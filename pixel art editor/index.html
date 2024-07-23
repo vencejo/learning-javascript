@@ -41,16 +41,6 @@
       return points;
     }
 
-    function draw(pos, state, dispatch) {
-      function connect(newPos, state) {
-        let line = drawLine(pos, newPos, state.color);
-        pos = newPos;
-        dispatch({ picture: state.picture.draw(line) });
-      }
-      
-      connect(pos, state);
-      return connect;
-    }
 
     function line(pos, state, dispatch) {
       return end => {
@@ -60,11 +50,11 @@
     }
 
 
-    let dom = startPixelEditor({
+    let pixelEditorDom = startPixelEditor({
         tools: { draw, line, fill, rectangle, pick }
     });
 
-    document.querySelector("div").appendChild(dom);
+    document.querySelector("div").appendChild(pixelEditorDom);
     
     </script>
    

@@ -64,6 +64,6 @@ function startPixelEditor({state = startState,
         app.syncState(state);
       }
     });
-  
+
     return app.dom;
   }
